@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.kylestrader.fivethings" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".Cover"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Page_1"
+            android:label="@string/title_activity_page_1"
+            android:parentActivityName=".Cover" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kylestrader.fivethings.Cover" />
+        </activity>
+        <activity
+            android:name=".Page_2"
+            android:label="@string/title_activity_page_2"
+            android:parentActivityName=".Page_1" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kylestrader.fivethings.Page_1" />
+        </activity>
+        <activity
+            android:name=".Page_3"
+            android:label="@string/title_activity_page_3"
+            android:parentActivityName=".Page_2" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kylestrader.fivethings.Page_2" />
+        </activity>
+        <activity
+            android:name=".Page_4"
+            android:label="@string/title_activity_page_4"
+            android:parentActivityName=".Page_3" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kylestrader.fivethings.Page_3" />
+        </activity>
+        <activity
+            android:name=".Page_5"
+            android:label="@string/title_activity_page_5"
+            android:parentActivityName=".Page_4" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.kylestrader.fivethings.Page_4" />
+        </activity>
+    </application>
+
+</manifest>
