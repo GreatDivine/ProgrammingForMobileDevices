@@ -38,6 +38,12 @@ public class Page_5 extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void goToPage_4(View view) {
+        Context context = getApplicationContext();
+        Intent i = new Intent(context, Cover.class);
+        startActivity(i);
+    }
+
     public void goToCover(View view) {
         Context context = getApplicationContext();
         Intent i = new Intent(context, Cover.class);

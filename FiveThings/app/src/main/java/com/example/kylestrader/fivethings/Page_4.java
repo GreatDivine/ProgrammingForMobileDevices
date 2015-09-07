@@ -43,4 +43,16 @@ public class Page_4 extends AppCompatActivity {
         Intent i = new Intent(context, Page_5.class);
         startActivity(i);
     }
+
+    public void goToPage3(View view) {
+        Context context = getApplicationContext();
+        Intent i = new Intent(context, Page_3.class);
+        startActivity(i);
+    }
+
+    public void goToCover(View view) {
+        Context context = getApplicationContext();
+        Intent i = new Intent(context, Cover.class);
+        startActivity(i);
+    }
 }

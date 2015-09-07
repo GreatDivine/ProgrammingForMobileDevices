@@ -7,17 +7,40 @@
     android:background="#575654"
     tools:context="com.example.kylestrader.fivethings.Page_5">
 
-    <TextView android:text="@string/Page_5_Content"
+    <TextView
+        android:text="@string/Page_5_Content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor = "#d1f3ff" />
+        android:layout_centerHorizontal="true"
+        android:textColor = "#d1f3ff"
+        android:textSize="24dp"
+        android:layout_marginTop="11dp"/>
 
     <Button
+        android:background="@xml/rounded_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
         android:text="Next"
+        android:onClick="goToPage3" />
+
+    <Button
+        android:background="@xml/rounded_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:text="Prev"
+        android:onClick="goToPage1" />
+
+    <Button
+        android:background="@xml/rounded_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="Home"
         android:onClick="goToCover" />
 
 </RelativeLayout>

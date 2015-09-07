@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Five Things</string>
+    <string name="app_name">Top Five Bands of the World</string>
 
-    <string name="Cover_Content">This is the cover page!</string>
-    <string name="Page_1_Content">This is the content for page 1!</string>
-    <string name="Page_2_Content">This is the content for page 2!</string>
-    <string name="Page_3_Content">This is the content for page 3!</string>
-    <string name="Page_4_Content">This is the content for page 4!</string>
-    <string name="Page_5_Content">This is the content for page 5!</string>
+    <string name="Cover_Content">The Beatles</string>
+    <string name="Page_1_Content">The Rolling Stones</string>
+    <string name="Page_2_Content">U2</string>
+    <string name="Page_3_Content">The Grateful Dead</string>
+    <string name="Page_4_Content">Velvet Underground</string>
+    <string name="Page_5_Content">Led Zepplin</string>
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_page_1">Page_1</string>
