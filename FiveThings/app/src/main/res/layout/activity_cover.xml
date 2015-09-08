@@ -13,7 +13,10 @@
         android:text="@string/Cover_Content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor = "#d1f3ff" />
+        android:layout_centerHorizontal="true"
+        android:textColor = "#d1f3ff"
+        android:textSize="24dp"
+        android:layout_marginTop="11dp"/>
 
     <Button
         android:background="@xml/rounded_button"

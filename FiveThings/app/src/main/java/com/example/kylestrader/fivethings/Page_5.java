@@ -38,9 +38,9 @@ public class Page_5 extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void goToPage_4(View view) {
+    public void goToPage4(View view) {
         Context context = getApplicationContext();
-        Intent i = new Intent(context, Cover.class);
+        Intent i = new Intent(context, Page_4.class);
         startActivity(i);
     }
 

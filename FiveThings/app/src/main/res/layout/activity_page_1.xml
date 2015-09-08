@@ -9,14 +9,24 @@
     android:background="#575654"
     tools:context="com.example.kylestrader.fivethings.Page_1">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxWidth="200dp"
+        android:maxHeight="200dp"
+        android:scaleType="fitCenter"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/beatles" />
+
     <TextView
         android:text="@string/Page_1_Content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textColor = "#d1f3ff"
-        android:textSize="24dp"
-        android:layout_marginTop="11dp"/>
+        android:textSize="14dp"
+        android:layout_marginTop="210dp"/>
 
     <Button
         android:background="@xml/rounded_button"
