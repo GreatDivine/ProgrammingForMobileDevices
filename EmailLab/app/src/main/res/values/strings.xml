@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EmailLab</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="header">Configure Email for most accounts in a few steps.</string>
+    <string name="showPwToggle">Show password</string>
+    <string name="manualSetup">Manual Setup</string>
+    <string name="next">Next ></string>
+</resources>
