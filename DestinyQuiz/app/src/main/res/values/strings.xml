@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Destiny Quiz</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    //Title Screen
+    <string name="Title">Destiny Quiz</string>
+    <string name="SubTitle">Test your knowledge of the Destiny universe</string>
+    <string name="Begin">Begin</string>
+
+    //Question1
+    <string name="Question_1">Question 1</string>
+    <string name="Q1_A0">Answer 1</string>
+    <string name="Q1_A1">Answer 2</string>
+    <string name="Q1_A2">Answer 3</string>
+    <string name="Q1_A3">Answer 4</string>
+
+    //Question2
+    <string name="Question_2">Question 2</string>
+    <string name="Q2_A0">Answer 1</string>
+    <string name="Q2_A1">Answer 2</string>
+    <string name="Q2_A2">Answer 3</string>
+    <string name="Q2_A3">Answer 4</string>
+
+    //Question3
+    <string name="Question_3">Question 3</string>
+    <string name="Q3_A0">Answer 1</string>
+    <string name="Q3_A1">Answer 2</string>
+    <string name="Q3_A2">Answer 3</string>
+    <string name="Q3_A3">Answer 4</string>
+
+    //Question4
+    <string name="Question_4">Question 4</string>
+    <string name="Q4_A0">Answer 1</string>
+    <string name="Q4_A1">Answer 2</string>
+    <string name="Q4_A2">Answer 3</string>
+    <string name="Q4_A3">Answer 4</string>
+
+    //Question5
+    <string name="Question_5">Question 5</string>
+    <string name="Q5_A0">Answer 1</string>
+    <string name="Q5_A1">Answer 2</string>
+    <string name="Q5_A2">Answer 3</string>
+    <string name="Q5_A3">Answer 4</string>
+
+    //Score Page
+    <string name="Score">Your score is:</string>
+    <string name="Pass">You are good</string>
+    <string name="Fail">You are bad</string>
+    <string name="Home">Return to title page</string>
+
+</resources>
