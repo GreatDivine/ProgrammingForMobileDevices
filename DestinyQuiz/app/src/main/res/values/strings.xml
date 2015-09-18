@@ -11,43 +11,47 @@
 
     //Question1
     <string name="Question_1">Question 1</string>
-    <string name="Q1_A0">Answer 1</string>
-    <string name="Q1_A1">Answer 2</string>
-    <string name="Q1_A2">Answer 3</string>
-    <string name="Q1_A3">Answer 4</string>
+    <string name="Question_1_Content">What is the name of the being that watches over the last city on Earth?</string>
+    <string name="Q1_A0">The Traveler</string>
+    <string name="Q1_A1">The Darkness</string>
+    <string name="Q1_A2">The Taken King</string>
+    <string name="Q1_A3">The Prophet</string>
 
     //Question2
     <string name="Question_2">Question 2</string>
-    <string name="Q2_A0">Answer 1</string>
-    <string name="Q2_A1">Answer 2</string>
-    <string name="Q2_A2">Answer 3</string>
-    <string name="Q2_A3">Answer 4</string>
+    <string name="Question_2_Content">Which enemy did Eris Morn fail to defeat?</string>
+    <string name="Q2_A0">Osiris</string>
+    <string name="Q2_A1">Crota</string>
+    <string name="Q2_A2">A Wizard</string>
+    <string name="Q2_A3">Xur</string>
 
     //Question3
     <string name="Question_3">Question 3</string>
-    <string name="Q3_A0">Answer 1</string>
-    <string name="Q3_A1">Answer 2</string>
-    <string name="Q3_A2">Answer 3</string>
-    <string name="Q3_A3">Answer 4</string>
+    <string name="Question_3_Content">Which friendly Fallen can be found in The Reef?</string>
+    <string name="Q3_A0">Cortana</string>
+    <string name="Q3_A1">The Speaker</string>
+    <string name="Q3_A2">Variks</string>
+    <string name="Q3_A3">Osiris</string>
 
     //Question4
     <string name="Question_4">Question 4</string>
-    <string name="Q4_A0">Answer 1</string>
-    <string name="Q4_A1">Answer 2</string>
-    <string name="Q4_A2">Answer 3</string>
-    <string name="Q4_A3">Answer 4</string>
+    <string name="Question_4_Content">What is the name of Crota\'s Father, The Taken King?</string>
+    <string name="Q4_A0">Faryx</string>
+    <string name="Q4_A1">Verikan</string>
+    <string name="Q4_A2">Crotas</string>
+    <string name="Q4_A3">Oryx</string>
 
     //Question5
     <string name="Question_5">Question 5</string>
-    <string name="Q5_A0">Answer 1</string>
-    <string name="Q5_A1">Answer 2</string>
-    <string name="Q5_A2">Answer 3</string>
-    <string name="Q5_A3">Answer 4</string>
+    <string name="Question_5_Content">What is the name of the last AI War-mind that protects the last city on Earth</string>
+    <string name="Q5_A0">Brother Vance</string>
+    <string name="Q5_A1">The Traveler</string>
+    <string name="Q5_A2">Rasputin</string>
+    <string name="Q5_A3">Guilty Spark</string>
 
     //Score Page
-    <string name="Score">Your score is:</string>
-    <string name="Pass">You are good</string>
-    <string name="Fail">You are bad</string>
+    <string name="Pass">Well done Guardian</string>
+    <string name="Fail">The Darkness has consumed you</string>
     <string name="Home">Return to title page</string>
 
 </resources>

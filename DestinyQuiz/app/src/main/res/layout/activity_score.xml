@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,12 +12,23 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:text="@string/Title"
+        android:id="@+id/score"
+        android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textSize="34sp"
         android:textColor="#000000"/>
+
+    <TextView
+        android:id="@+id/scoreResult"
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10sp"
+        android:textSize="17sp"
+        android:textColor="#424242"/>
 
     <View
         android:layout_width="match_parent"
@@ -25,10 +37,11 @@
         android:background="@android:color/darker_gray"/>
 
     <ImageView
+        android:id="@+id/scoreImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/img_home"/>
+        android:layout_gravity="center_horizontal|center_vertical"
+        android:src="@drawable/img_win"/>
 
     <Button
         android:id="@+id/next_button"
@@ -36,9 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
         android:textSize="15sp"
-        android:text="@string/Begin"
+        android:text="@string/Home"
         android:clickable="true"
-        android:layout_marginTop="90sp"
         android:onClick="onClick"/>
 
 </LinearLayout>
