@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.rebekah.explicitintent.SecondActivity">
+    <TextView
+        android:id="@+id/fact2"
+        android:text="Fact 2"
+        android:textSize="22sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_marginBottom="10dp"
+        android:gravity="center" />
+    <TextView
+        android:id="@+id/text"
+        android:text="Nic Cage is the only person to ever beat the world record of being the most handsome man in the world."
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fact2"
+        android:layout_marginTop="20dp" />
+    <ImageView
+        android:src="@drawable/nic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <Button
+        android:id="@+id/home"
+        android:text="Home"
+        android:onClick="goHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:longClickable="false"
+        android:tint="#010101" />
+
+</RelativeLayout>
