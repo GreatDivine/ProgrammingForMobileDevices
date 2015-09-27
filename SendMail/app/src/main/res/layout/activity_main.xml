@@ -33,6 +33,7 @@
         android:backgroundTint="@android:color/transparent"/>
 
     <Button
+        android:id="@+id/send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send"
@@ -41,6 +42,7 @@
         android:onClick="sendMail"/>
 
     <Button
+        android:id="@+id/attachment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Attachment"
