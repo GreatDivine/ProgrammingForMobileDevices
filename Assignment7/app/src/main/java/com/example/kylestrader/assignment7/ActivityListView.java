@@ -61,10 +61,8 @@ public class ActivityListView extends AppCompatActivity {
 
         mList = new ArrayList<Movie>();
 
-        mAdapter = new ArrayAdapter<Movie>(
+        mAdapter = new MovieListAdapter(
                 getApplicationContext(),
-                R.layout.list_item,
-                R.id.list_item,
                 mList
         );
 
@@ -146,7 +144,7 @@ public class ActivityListView extends AppCompatActivity {
 
             //mAdapter.add(m);
             mList.add(m);
-            resultStrs[i] = "Title: " + Title + ", Date: " + Date + ", Description: " + Description + ".";
+            resultStrs[i] = Title + "," + Date + "," + Description;
 
         }
 
@@ -155,9 +153,7 @@ public class ActivityListView extends AppCompatActivity {
             Log.v("MainActivity", s);
         }
 
-        mAdapter = new ArrayAdapter<Movie>(this, mList);
-
-        return null;
+        return resultStrs;
     }
 
     private class FetchMovieTask extends AsyncTask<Void, Void, String[]>
@@ -221,5 +217,28 @@ public class ActivityListView extends AppCompatActivity {
                 return resultStrs;
             }
         }
+
+        @Override
+        protected void onPostExecute(String[] result)
+        {
+            if (result != null)
+            {
+                mAdapter = new MovieListAdapter(getApplicationContext(), mList);
+
+                ListView lv = (ListView) findViewById(R.id.list_view);
+
+                lv.setAdapter(mAdapter);
+
+                for (String s : result)
+                {
+                    Movie m = new Movie();
+                    m.m_Title = s.split(",")[0];
+                    m.m_Release = s.split(",")[1];
+                    m.m_Description = s.split(",")[1];
+                    mAdapter.add(m);
+                }
+            }
+        }
+
     }
 }

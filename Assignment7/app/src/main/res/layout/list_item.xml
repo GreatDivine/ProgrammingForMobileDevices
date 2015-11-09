@@ -1,9 +1,38 @@
-<TextView
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/list_item"
-    android:text=""
-    android:textColor="@color/material_blue_grey_800"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:minHeight="?android:attr/listPreferredItemHeight"
-    android:gravity="center_vertical" />
+    android:layout_height="wrap_content"
+    >
+
+    <ImageView
+        android:id="@+id/movie_img"
+        android:scaleType="centerCrop"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/movie"/>
+
+    <TextView
+        android:id="@+id/movie_title"
+        android:layout_toRightOf="@id/movie_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:textStyle="bold"
+        android:paddingTop="20dp"
+        android:paddingLeft="10dp"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/movie_release"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/movie_title"
+        android:layout_toRightOf="@id/movie_img"
+        android:text="Release"
+        android:paddingTop="10dp"
+        android:paddingLeft="10dp"
+        android:textSize="18sp"/>
+
+</RelativeLayout>
