@@ -34,10 +34,12 @@ public class MovieListAdapter extends ArrayAdapter<Movie>
         View rowView = inflater.inflate(R.layout.list_item, parent, false);
 
         TextView rName = (TextView)  rowView.findViewById(R.id.movie_title);
-        rName.setText(movieList.get(position).m_Title);
+        String title = movieList.get(position).getM_Title();
+
+        rName.setText(movieList.get(position).getM_Title());
 
         TextView pTime = (TextView) rowView.findViewById(R.id.movie_release);
-        pTime.setText(movieList.get(position).m_Release);
+        pTime.setText(movieList.get(position).getM_Release());
         Log.v("movie", pTime.getText().toString());
         return rowView;
     }

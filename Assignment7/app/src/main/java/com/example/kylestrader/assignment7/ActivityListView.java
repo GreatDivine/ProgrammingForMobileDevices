@@ -41,7 +41,7 @@ import android.widget.TextView;
  */
 public class ActivityListView extends AppCompatActivity {
 
-    private ArrayAdapter<Movie> mAdapter;
+    private MovieListAdapter mAdapter;
     private ArrayList<Movie> mList;
 
     String m_BaseYear = "2010";
@@ -73,10 +73,12 @@ public class ActivityListView extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Context context = getApplicationContext();
-                String text = "You click on me now";
-                int duration = Toast.LENGTH_SHORT;
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
+                Intent i = new Intent(context, MovieDetails.class);
+                i.putExtra("title", mList.get(position).getM_Title());
+                i.putExtra("release", mList.get(position).getM_Release());
+                i.putExtra("description", mList.get(position).getM_Description());
+
+                startActivity(i);
             }
         });
 
@@ -118,7 +120,7 @@ public class ActivityListView extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private String[] GetMovieDataFromJson(String moviesJsonStr) throws JSONException
+    private void GetMovieDataFromJson(String moviesJsonStr) throws JSONException
     {
         JSONObject movieJson = new JSONObject(moviesJsonStr);
         JSONArray movieArray = movieJson.getJSONArray("results");
@@ -137,23 +139,12 @@ public class ActivityListView extends AppCompatActivity {
             Date = movie.getString("release_date");
             Description = movie.getString("overview");
 
-            Movie m = new Movie();
-            m.m_Description = Description;
-            m.m_Release = Date;
-            m.m_Title = Title;
+            Movie m = new Movie(Title, Date, Description);
 
             //mAdapter.add(m);
             mList.add(m);
-            resultStrs[i] = Title + "," + Date + "," + Description;
 
         }
-
-        for (String s: resultStrs)
-        {
-            Log.v("MainActivity", s);
-        }
-
-        return resultStrs;
     }
 
     private class FetchMovieTask extends AsyncTask<Void, Void, String[]>
@@ -210,7 +201,7 @@ public class ActivityListView extends AppCompatActivity {
                 int numDays = 7;
                 String[] resultStrs = new String[numDays];
                 try {
-                    resultStrs = GetMovieDataFromJson(movieJsonStr);
+                    GetMovieDataFromJson(movieJsonStr);
                 } catch (JSONException j) {
                     Log.e("MainActivity", "JSON Exception" + j);
                 }
@@ -221,23 +212,7 @@ public class ActivityListView extends AppCompatActivity {
         @Override
         protected void onPostExecute(String[] result)
         {
-            if (result != null)
-            {
-                mAdapter = new MovieListAdapter(getApplicationContext(), mList);
-
-                ListView lv = (ListView) findViewById(R.id.list_view);
-
-                lv.setAdapter(mAdapter);
-
-                for (String s : result)
-                {
-                    Movie m = new Movie();
-                    m.m_Title = s.split(",")[0];
-                    m.m_Release = s.split(",")[1];
-                    m.m_Description = s.split(",")[1];
-                    mAdapter.add(m);
-                }
-            }
+            mAdapter.notifyDataSetChanged();
         }
 
     }
