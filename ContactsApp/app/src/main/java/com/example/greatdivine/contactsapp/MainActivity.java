@@ -1,30 +1,110 @@
 package com.example.greatdivine.contactsapp;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.SearchView;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    private ContactListAdapter mAdapter;
+    private ArrayList<Contact> mList;
     static DBHelper m_Db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_display_contacts);
 
         m_Db = new DBHelper(this);
+
+        mList = new ArrayList<Contact>();
+        mList = GetContactList();
+
+        mAdapter = new ContactListAdapter(
+                getApplicationContext(),
+                mList
+        );
+
+        ListView listV = (ListView) findViewById(R.id.contact_list_view);
+        listV.setAdapter(mAdapter);
+        registerForContextMenu(listV);
+
+        handleIntent(getIntent());
+
+    }
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            //use the query to search your data somehow
+        }
+    }
+
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        if (v.getId()==R.id.contact_list_view) {
+            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+            menu.setHeaderTitle("Contact Options");
+            String[] menuItems = {"Update", "Delete", "Cancel"};
+            for (int i = 0; i<menuItems.length; i++) {
+                menu.add(Menu.NONE, i, i, menuItems[i]);
+            }
+        }
+    }@Override
+     public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+        int menuItemIndex = item.getItemId();
+        String[] menuItems = {"Update", "Delete", "Cancel"};
+        String menuItemName = menuItems[menuItemIndex];
+        Contact contact = mList.get(info.position);
+
+        if (menuItemName == "Update")
+        {
+
+        }
+        if (menuItemName == "Delete") {
+            DeleteContact(contact.getId());
+            mList = GetContactList();
+            mAdapter.clear();
+            mAdapter.addAll(mList);
+            mAdapter.notifyDataSetChanged();
+        }
+
+        return true;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.options_menu, menu);
+
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        MenuItem menuItem = menu.findItem(R.id.contact_search);//.getActionView();
+        SearchView searchView = (SearchView)menuItem.getActionView();
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+
+
         return true;
     }
 
@@ -42,6 +122,11 @@ public class MainActivity extends AppCompatActivity {
         return m_Db.getAllContacts();
     }
 
+    public static void DeleteContact(int id)
+    {
+        m_Db.deleteContact(id);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -49,37 +134,25 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_search) {
-            return true;
-        }
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_add) {
-            Context context = getApplicationContext();
-            Intent i = new Intent(context, AddContact.class);
-            startActivity(i);
-            return true;
-        }
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_display) {
-            Context context = getApplicationContext();
-            Intent i = new Intent(context, DisplayContacts.class);
-            startActivity(i);
-            return true;
-        }
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_update) {
-            return true;
-        }
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_delete) {
-            return true;
+        if (id == R.id.action_add)
+        {
+            Context c = getApplicationContext();
+            Intent i = new Intent(c, AddContact.class);
+            startActivityForResult(i, 1);
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        if (requestCode == 1)
+        {
+            mList = GetContactList();
+            mAdapter.clear();
+            mAdapter.addAll(mList);
+            mAdapter.notifyDataSetChanged();
+        }
     }
 }

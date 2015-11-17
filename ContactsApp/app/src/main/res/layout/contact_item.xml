@@ -10,7 +10,7 @@
         android:scaleType="centerCrop"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/group"/>
+        android:src="@drawable/contact"/>
 
     <TextView
         android:id="@+id/item_name"

@@ -77,7 +77,7 @@ public class DBHelper extends SQLiteOpenHelper
     public Contact cursorToContact(Cursor cursor)
     {
         Contact contact = new Contact();
-        contact.setId(cursor.getLong(0));
+        contact.setId(cursor.getInt(0));
         contact.setName(cursor.getString(1));
         contact.setName(cursor.getString(2));
         contact.setName(cursor.getString(3));
@@ -131,7 +131,7 @@ public class DBHelper extends SQLiteOpenHelper
         res.moveToFirst();
         while(res.isAfterLast() == false)
         {
-            long id = res.getLong(res.getColumnIndex(CONTACTS_COLUMN_ID));
+            int id = res.getInt(res.getColumnIndex(CONTACTS_COLUMN_ID));
             String name = res.getString(res.getColumnIndex(CONTACTS_COLUMN_NAME));
             String email = res.getString(res.getColumnIndex(CONTACTS_COLUMN_EMAIL));
             String phone = res.getString(res.getColumnIndex(CONTACTS_COLUMN_PHONE));

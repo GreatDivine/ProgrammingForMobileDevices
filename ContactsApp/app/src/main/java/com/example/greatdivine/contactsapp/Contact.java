@@ -5,7 +5,7 @@ package com.example.greatdivine.contactsapp;
  */
 public class Contact {
 
-    private long m_Id;
+    private int m_Id;
     private String m_Name;
     private String m_Email;
     private String m_Phone;
@@ -23,7 +23,7 @@ public class Contact {
         this.m_Country = "";
     }
 
-    public Contact(long m_Id, String m_Name, String m_Email, String m_Phone, String m_Street, String m_City, String m_Country) {
+    public Contact(int m_Id, String m_Name, String m_Email, String m_Phone, String m_Street, String m_City, String m_Country) {
         this.m_Id = m_Id;
         this.m_Name = m_Name;
         this.m_Email = m_Email;
@@ -33,7 +33,7 @@ public class Contact {
         this.m_Country = m_Country;
     }
 
-    public void setId(long m_Id) {
+    public void setId(int m_Id) {
         this.m_Id = m_Id;
     }
 
@@ -61,7 +61,7 @@ public class Contact {
         this.m_Country = m_Country;
     }
 
-    public long getId() {
+    public int getId() {
         return m_Id;
     }
 

@@ -35,31 +35,6 @@ public class ContactDetails extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_search) {
-            return true;
-        }
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_add) {
-            return true;
-        }
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_display) {
-            return true;
-        }
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_update) {
-            return true;
-        }
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_delete) {
-            return true;
-        }
-
         return super.onOptionsItemSelected(item);
     }
 }
