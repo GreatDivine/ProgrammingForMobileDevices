@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/add_name_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Name"/>
+
+    <EditText
+        android:id="@+id/add_email_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/add_phone_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Phone"/>
+
+    <EditText
+        android:id="@+id/add_street_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Street"/>
+
+    <EditText
+        android:id="@+id/add_city_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="City"/>
+
+    <EditText
+        android:id="@+id/add_country_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Country"/>
+
+    <Button
+        android:id="@+id/add_save"
+        android:paddingTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:layout_gravity="right"
+        android:onClick="Submit"/>
+
+</LinearLayout>

@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+    <item android:id="@+id/action_add" android:title="Add Contact"
+        android:orderInCategory="1" app:showAsAction="never" />
+    <item android:id="@+id/action_display" android:title="Display Contacts"
+        android:orderInCategory="2" app:showAsAction="never" />
+    <item android:id="@+id/action_update" android:title="Update Contact"
+        android:orderInCategory="3" app:showAsAction="never" />
+    <item android:id="@+id/action_delete" android:title="Delete Contact"
+        android:orderInCategory="4" app:showAsAction="never" />
+    <item android:id="@+id/action_search" android:title="Search Contacts"
+        android:orderInCategory="5" app:showAsAction="never" />
+</menu>
