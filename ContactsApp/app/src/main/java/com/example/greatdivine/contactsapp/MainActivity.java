@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ContactListAdapter mAdapter;
     private ArrayList<Contact> mList;
-    static DBHelper m_Db;
+    DBHelper m_Db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +80,9 @@ public class MainActivity extends AppCompatActivity {
 
         if (menuItemName == "Update")
         {
-
+            Context c = getApplicationContext();
+            Intent i = new Intent(c, AddContact.class);
+            startActivityForResult(i, 2);
         }
         if (menuItemName == "Delete") {
             DeleteContact(contact.getId());
@@ -108,21 +110,26 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    public static DBHelper getM_Db() {
+    public DBHelper getM_Db() {
         return m_Db;
     }
 
-    public static void AddContact(String m_Name, String m_Email, String m_Phone, String m_Street, String m_City, String m_Country)
+    public void addContact(String m_Name, String m_Email, String m_Phone, String m_Street, String m_City, String m_Country)
     {
         m_Db.insertContact(m_Name, m_Email, m_Phone, m_Street, m_City, m_Country);
     }
 
-    public static ArrayList<Contact> GetContactList()
+    public void updateContact(int id, String m_Name, String m_Email, String m_Phone, String m_Street, String m_City, String m_Country)
+    {
+        m_Db.updateContact(id, m_Name, m_Email, m_Phone, m_Street, m_City, m_Country);
+    }
+
+    public ArrayList<Contact> GetContactList()
     {
         return m_Db.getAllContacts();
     }
 
-    public static void DeleteContact(int id)
+    public void DeleteContact(int id)
     {
         m_Db.deleteContact(id);
     }
@@ -147,12 +154,38 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        if (requestCode == 1)
+        Bundle extras = getIntent().getExtras();
+
+        switch(resultCode)
         {
-            mList = GetContactList();
-            mAdapter.clear();
-            mAdapter.addAll(mList);
-            mAdapter.notifyDataSetChanged();
+            case 1:
+                addContact(
+                        extras.getString("name"),
+                        extras.getString("email"),
+                        extras.getString("phone"),
+                        extras.getString("street"),
+                        extras.getString("city"),
+                        extras.getString("country")
+                );
+                break;
+
+            case 2:
+                updateContact(
+                        extras.getInt("id"),
+                        extras.getString("name"),
+                        extras.getString("email"),
+                        extras.getString("phone"),
+                        extras.getString("street"),
+                        extras.getString("city"),
+                        extras.getString("country")
+                );
+
+                break;
         }
+
+        mList = GetContactList();
+        mAdapter.clear();
+        mAdapter.addAll(mList);
+        mAdapter.notifyDataSetChanged();
     }
 }

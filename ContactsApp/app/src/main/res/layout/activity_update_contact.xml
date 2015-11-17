@@ -3,4 +3,54 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <EditText
+        android:id="@+id/update_name_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Name"/>
+
+    <EditText
+        android:id="@+id/update_email_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Email"/>
+
+    <EditText
+        android:id="@+id/update_phone_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Phone"/>
+
+    <EditText
+        android:id="@+id/update_street_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Street"/>
+
+    <EditText
+        android:id="@+id/update_city_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="City"/>
+
+    <EditText
+        android:id="@+id/update_country_field"
+        android:paddingTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Country"/>
+
+    <Button
+        android:id="@+id/update_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:layout_gravity="right"
+        android:onClick="Submit"/>
+
 </LinearLayout>

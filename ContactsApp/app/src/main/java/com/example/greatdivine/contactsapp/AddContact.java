@@ -1,5 +1,7 @@
 package com.example.greatdivine.contactsapp;
 
+import android.content.Intent;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -52,7 +54,16 @@ public class AddContact extends AppCompatActivity {
         TextView country = (TextView)findViewById(R.id.add_country_field);
         String sCountry = country.getText().toString();
 
-        MainActivity.AddContact(sName, sEmail, sPhone, sStreet, sCity, sCountry);
+        Intent i = new Intent();
+        i.putExtra("name", sName);
+        i.putExtra("email", sEmail);
+        i.putExtra("phone", sPhone);
+        i.putExtra("street", sStreet);
+        i.putExtra("city", sCity);
+        i.putExtra("country", sCountry);
+
+        setResult(1, i);
+        finish();
     }
 }
 
